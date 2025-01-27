@@ -1,0 +1,28 @@
+// swapping of two numbers
+
+#include<iostream>
+using namespace std;
+
+void swapping(int &n1 ,int &n2)
+{
+	int temp =n1;
+	n1=n2;
+	n2=temp;
+}
+
+int main()
+{
+	int num1;
+	cout<<"Enter the first number:"<<endl;
+	cin>>num1;
+	
+	int num2;
+	cout<<"Enter the second number:"<<endl;
+	cin>>num2;
+	
+	cout<<"Before swapping:"<<'\n'<<num1<<'\t'<<num2<<endl;
+	swapping(num1,num2);
+	
+	cout<<"After swapping:"<<'\n'<<num1<<'\t'<<num2;
+	return 0;
+}
