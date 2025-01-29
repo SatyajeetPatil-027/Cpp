@@ -1,0 +1,89 @@
+#include <iostream>
+using namespace std;
+
+int main() 
+{
+    double balance = 0.0;  
+    int choice;
+    double amount;
+    int transactionCount = 0;  
+
+    cout<< "Bank Passbook System\n";
+    cout<< "--------------------------" <<endl;
+
+    while (true) 
+	{
+        cout<< "1. Deposit Cash" <<endl;
+        cout<< "2. Withdraw Cash" <<endl;
+        cout<< "3. Print Passbook" <<endl;
+        cout<< "4. Exit" << endl;
+        cout<< "\nPlease enter your choice: "<<endl;
+        cin>> choice;
+
+        if (choice == 1)
+		{
+           
+            cout<< "Please enter amount to deposit: ";
+            cin>> amount;
+            balance += amount;
+            transactionCount++;  
+            cout<< "Amount deposited: "<< amount<<endl;
+        } 
+        else if (choice == 2)
+		{
+            
+            cout<< "Please enter amount to withdraw: ";
+            cin>> amount;
+            if (amount <= balance)
+			{
+                balance -= amount;
+                transactionCount++;  
+                cout<< "Amount withdrawn: "<<amount<<endl;
+            } 
+			else
+			{
+                cout << "Insufficient balance!"<<endl;
+            }
+        } 
+        else if (choice == 3)
+		{
+           
+            cout<< "\n--- Bank Passbook ---"<<endl;
+            cout<< "Type\t\tAmount"<<endl;
+            cout<< "--------------------------"<<endl;
+          
+            if (transactionCount == 0)
+			{
+                cout<<"No transactions yet."<<endl;
+            }
+			else
+			{
+                for (int i = 1; i <= transactionCount; i++)
+				{
+                    cout<< "Transaction "<< i<< ": ";
+                    if (i % 2 != 0)
+					{
+                        cout<< "Deposit"<< "\t"<<amount<<endl;
+                    }
+					else
+					{
+                        cout<<"Withdrawal"<<"\t"<<amount<<endl;
+                    }
+                }
+            }
+            cout<< "--------------------------" << endl;
+            cout<< "Current Balance: " << balance << endl;
+        } 
+        else if (choice == 4)
+		{
+            cout<<"Exiting Bank Statement system."<<endl;
+            cout<< "Have a nice day!" << endl;
+            break;
+        } 
+        else
+		{
+            cout<< "Invalid choice. Please try again." << endl;
+        }
+    }
+    return 0;
+}
