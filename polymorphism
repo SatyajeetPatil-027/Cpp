@@ -1,0 +1,32 @@
+#include<iostream>
+using namespace std;
+class shape
+{
+	public:
+		float a;
+		void area(int r)
+		{
+			a= 3.142* r*r;
+			cout<<"The area of the circle is: "<<a<<endl;
+		}
+		void area(int l, int b)
+		{
+			a=l*b;
+			cout<<"The area of the rectangle is: "<<a<<endl;
+		}
+		void area(float b ,float h)
+		{
+			a=0.5*(b*h);
+			cout<<"The area of triangle is: "<<a<<endl;
+		}
+};
+
+int main()
+{
+	float a=2,b=1;
+	shape obj;
+	obj.area(8);
+	obj.area(5,7);
+	obj.area(a,b);
+	return 0;
+}
